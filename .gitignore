@@ -1,0 +1,9 @@
+zsh_history
+/dot/ssh
+/dot/vim/tmp/*
+/dot/oh-my-zsh
+bash_profile
+tmux.conf
+zshrc.pre-oh-my-zsh
+.DS_Store
+gitconfig

@@ -1,0 +1,4 @@
+" set transparency=10
+" set lines=999
+" hi Normal
+" colorscheme detailed

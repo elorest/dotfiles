@@ -1,0 +1,95 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="muse"
+# muse,gorilla, dogenpunk, miloshadzic 
+DISABLE_UPDATE_PROMPT=true
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# plugins=(pow)
+plugins=(bundler pow brew)
+# ITERM_CURSOR=true
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+
+alias ga='git add -A .'
+alias gb='git branch'
+alias gst='git status'
+alias gl='git log'
+alias glg='git log --graph --pretty=oneline --abbrev-commit'
+alias gld='git log -p'
+alias gm='git merge'
+alias gmm='git checkout master; git merge'
+alias gu='git pull'
+alias gp='git push'
+alias gcp='git cherry-pick'
+alias gc='git checkout'
+alias grh='git reset --hard'
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+# alias gcb='git checkout -b'
+alias gss='git stash save'
+alias gsa='git stash apply'
+alias gsl='git stash lists'
+alias be='bundle exec'
+alias rdb='rake db:drop db:create db:migrate db:seed'
+alias gcg="ga && gcm a && gp"
+
+#Crystal
+alias cr="crystal"
+alias crb="crystal build"
+alias crr="crystal build --release"
+alias crs="crystal spec"
+alias cria="crystal init app"
+alias cril="crystal init lib"
+
+alias dcomp="docker-compose"
+alias nv='vimr'
+
+
+function gcm {
+if [ -z "$1" ]; then git commit -a; else git commit -a -m $1; fi
+}
+
+gcb() { git checkout -b $1; git push -u origin $1; }
+
+gbd() { git branch -D $1; git push origin :$1; }
+compdef gbd gc
+
+function agk {
+  ag --nocolor -l $1
+}  
+export PATH=~/usr/local/bin:/usr/bin:/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH
+# export TERM=screen-256color
+#export DATABASE_URL="postgres://isaac:@127.0.0.1:5432/blog"
+
+#blogexport PATH="$HOME/.anyenv/bin:$PATH"
+#eval "$(anyenv init -)"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
