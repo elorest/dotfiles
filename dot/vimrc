@@ -90,6 +90,7 @@ map <Leader>W :w !sudo tee % > /dev/null<CR>
 map <Leader>x :x<CR>
 map <Leader>q :q<CR>
 map <Leader>Q :q!<CR>
+map <Leader>; :
 
 " system clipboards
 map <Leader>y "+y
