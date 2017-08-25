@@ -1,5 +1,5 @@
 dotfilepath = File.join(File.expand_path(File.dirname(__FILE__)), "dot")
-simlinkpath = Dir.pwd
+simlinkpath = ENV["HOME"] || Dir.pwd
 dotfilelist = Dir.entries(dotfilepath).select{|f| !%w(. ..).include?(f)}
 backupdir = simlinkpath+"/dotfilebackup_"+Time.now.strftime("%Y%m%d%H%M%S")
 Dir.mkdir(backupdir)
