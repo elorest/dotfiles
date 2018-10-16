@@ -12,8 +12,12 @@ Plugin 'VundleVim/Vundle.vim'
 
 " My bundles
 Plugin 'ervandew/supertab'
+
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+Plugin 'roman/golden-ratio'
+Plugin 'tpope/vim-markdown'
 Plugin 'jakemoldham/yellow-metal'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-haml'
@@ -68,7 +72,7 @@ set autowrite
 
 augroup myfiletypes
 	autocmd!
-	autocmd FileType slim,coffee,ruby,eruby,yaml,cpp,scss,c,crystal set ai sw=2 sts=2 et
+	autocmd FileType slim,coffee,ruby,eruby,yaml,cpp,scss,c,crystal,go set ai sw=2 sts=2 et
 augroup END
 
 " Ruby Complete
@@ -79,6 +83,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 " let mapleader = ","
 let mapleader = "\<space>"
 map <Leader>n :NERDTreeToggle<cr>
+map <Leader>cn :vsplit ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>cn :vsplit ~/Dropbox/notes/coding-notes.txt<cr>
 map <Leader>vc :vsplit ~/Dropbox/notes/vim-cheat.txt<cr>
 map <Leader>ff mfgg=G`fzz
@@ -135,7 +140,7 @@ function! RelativeNumberToggle()
 	endif
 endfunction 
 
-" Toggles line numbers on and off.
+" Toggles line numbers on and off: Useful for copy paste.
 function! NumberToggle()
 	if(&number == 1)
 		set nonumber

@@ -1,4 +1,11 @@
 " set transparency=10
-" set lines=999
+" set columns=999
 " hi Normal
 " colorscheme detailed
+set lines=50 columns=210
+set guifont=Inconsolata\ 14 
+set antialias
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L

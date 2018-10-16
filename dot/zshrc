@@ -70,7 +70,8 @@ alias cril="crystal init lib"
 
 alias dcomp="docker-compose"
 alias nv='vimr'
-
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
 
 function gcm {
 if [ -z "$1" ]; then git commit -a; else git commit -a -m $1; fi
@@ -84,12 +85,25 @@ compdef gbd gc
 function agk {
   ag --nocolor -l $1
 }  
+
+function vega {
+   env DRI_PRIME=1 $1
+}
+
 export PATH=~/usr/local/bin:/usr/bin:/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/llvm/bin:$PATH
+export PATH=/home/isaac/.gem/ruby/2.5.0/bin:$PATH
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
+unset GREP_OPTIONS
 # export TERM=screen-256color
 #export DATABASE_URL="postgres://isaac:@127.0.0.1:5432/blog"
 
 #blogexport PATH="$HOME/.anyenv/bin:$PATH"
 #eval "$(anyenv init -)"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
+export EDITOR="vim"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export SHARDS_CACHE_PATH=~/.shards
+#export PATH=/home/isaac/.gem/ruby/2.5.0/bin:$PATH
 eval "$(rbenv init -)"
+export PATH="$HOME/.crenv/bin:$PATH"
+eval "$(crenv init -)"
